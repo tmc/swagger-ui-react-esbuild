@@ -1,2 +1,0 @@
-build:
-	esbuild app.jsx --bundle --minify --sourcemap --target=chrome58
