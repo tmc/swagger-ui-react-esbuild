@@ -13,15 +13,14 @@ esbuild app.jsx --bundle --minify --sourcemap --target=chrome58 --outfile=out.js
       2 │ ...er-ui .cf:after{clear:both}.swagger-ui .cf{*zoom:1}.swagger-ui .cl{clear:left}.swagger-...
         ╵                                               ^
 
-✘ [ERROR] Could not resolve "isarray"
+✘ [ERROR] Could not resolve "buffer"
 
-    node_modules/swagger-ui-react/swagger-ui.js:2:316084:
-      2 │ ...754")},function(e,t){e.exports=require("isarray")},function(e,t,n){var r=n(222),a=n(342...
-        ╵                                           ~~~~~~~~~
+    node_modules/safe-buffer/index.js:3:21:
+      3 │ var buffer = require('buffer')
+        ╵                      ~~~~~~~~
 
-  You can mark the path "isarray" as external to exclude it from the bundle, which will remove this
-  error. You can also surround this "require" call with a try/catch block to handle this failure at
-  run-time instead of bundle-time.
+  The package "buffer" wasn't found on the file system but is built into node. Are you trying to
+  bundle for node? You can use "--platform=node" to do that, which will remove this error.
 
 ✘ [ERROR] Could not resolve "stream"
 
@@ -32,15 +31,6 @@ esbuild app.jsx --bundle --minify --sourcemap --target=chrome58 --outfile=out.js
   The package "stream" wasn't found on the file system but is built into node. Are you trying to
   bundle for node? You can use "--platform=node" to do that, which will remove this error.
 
-✘ [ERROR] Could not resolve "buffer"
-
-    node_modules/safe-buffer/index.js:3:21:
-      3 │ var buffer = require('buffer')
-        ╵                      ~~~~~~~~
-
-  The package "buffer" wasn't found on the file system but is built into node. Are you trying to
-  bundle for node? You can use "--platform=node" to do that, which will remove this error.
-
-1 warning and 3 errors
+1 warning and 2 errors
 make: *** [build] Error 1
 ```
