@@ -1,0 +1,9 @@
+{
+  "name": "example-bundle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "swagger-ui-react": "^4.1.3"
+  }
+}
